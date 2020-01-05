@@ -74,6 +74,12 @@ extern NSInteger const RMStoreErrorCodeUnableToCompleteVerification;
  @see [SKPayment applicationUsername]
  */
 - (void)addPayment:(NSString*)productIdentifier
+          quantity:(NSInteger)quantity
+              user:(NSString*)userIdentifier
+           success:(void (^)(SKPaymentTransaction *transaction))successBlock
+           failure:(void (^)(SKPaymentTransaction *transaction, NSError *error))failureBlock;
+
+- (void)addPayment:(NSString*)productIdentifier
               user:(NSString*)userIdentifier
            success:(void (^)(SKPaymentTransaction *transaction))successBlock
            failure:(void (^)(SKPaymentTransaction *transaction, NSError *error))failureBlock __attribute__((availability(ios,introduced=7.0)));
